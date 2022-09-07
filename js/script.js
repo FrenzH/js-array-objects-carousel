@@ -42,6 +42,11 @@ let idInterval = setInterval(moveCarouselForward, CHANGE_IMAGE_DELAY * 1000);
 
 const leftArrowButton = document.getElementById('left-arrow');
 const rightArrowButton = document.getElementById('right-arrow');
+const backWard = document.getElementById('backWard');
+const forWard = document.getElementById('forWard');
+
+backWard.addEventListener('click',setIntervalBackWard)
+forWard.addEventListener('click',setIntervalForWard)
 
 
 

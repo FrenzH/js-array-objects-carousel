@@ -29,3 +29,16 @@ function buildCarousel(images, activeIndex){
     carouselThumbs.innerHTML = content;
 }
 
+function setIntervalBackWard(){
+    clearInterval(idInterval);
+    activeIndex = activeIndex > 0 ? activeIndex -1 : images.length -1 ;
+    buildCarousel(images,activeIndex);
+    idInterval=setInterval(setIntervalBackWard,CHANGE_IMAGE_DELAY*1000)
+
+
+}
+
+
+function setIntervalForWard(){
+
+}
