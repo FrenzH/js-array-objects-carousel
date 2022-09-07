@@ -97,5 +97,10 @@ body {
   background: none;
   border: none;
   cursor: pointer;
+  color: white;
 
+}
+
+i.fa-backward{
+  padding-right: 30px;
 }
