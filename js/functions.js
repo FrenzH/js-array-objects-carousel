@@ -4,14 +4,14 @@ function moveCarouselForward(){
     clearInterval(idInterval)
     activeIndex = activeIndex < images.length -1 ? activeIndex +1 : 0 ;
     buildCarousel(images, activeIndex);
-    idInterval = setInterval(moveCarouselForward, CHANGE_IMAGE_DELAY * 1000);
+    idInterval = setInterval(automaticAdvance, CHANGE_IMAGE_DELAY * 1000);
 }
 
 function moveCarouselPrevious(){
      clearInterval(idInterval);
-    activeIndex = activeIndex > 0 ? activeIndex -1 : images.length -1 ;
-    buildCarousel(images, activeIndex);
-    idInterval = setInterval(moveCarouselForward, CHANGE_IMAGE_DELAY * 1000);
+     activeIndex = activeIndex > 0 ? activeIndex -1 : images.length -1 ;
+     buildCarousel(images, activeIndex);
+     idInterval = setInterval(automaticAdvance,CHANGE_IMAGE_DELAY*1000);
 }
 
 
@@ -30,15 +30,31 @@ function buildCarousel(images, activeIndex){
 }
 
 function setIntervalBackWard(){
-    clearInterval(idInterval);
-    activeIndex = activeIndex > 0 ? activeIndex -1 : images.length -1 ;
-    buildCarousel(images,activeIndex);
-    idInterval=setInterval(setIntervalBackWard,CHANGE_IMAGE_DELAY*1000)
+     directionInterval = false ;
+    
+    
 
 
 }
 
 
 function setIntervalForWard(){
+    directionInterval = true;
+   
+    
+    
 
 }
+
+function automaticAdvance(){
+    if(directionInterval === true){
+        moveCarouselForward();
+
+    
+    }
+    else{
+        moveCarouselPrevious();
+    }
+    
+}
+

@@ -31,14 +31,15 @@ const images = [
 ];
 
 
-const CHANGE_IMAGE_DELAY = 8;
+const CHANGE_IMAGE_DELAY = 3;
 let activeIndex = 0;
+let directionInterval = true ;// if true direction forward else if false direction backward
 
 
 
 buildCarousel(images, activeIndex);
 
-let idInterval = setInterval(moveCarouselForward, CHANGE_IMAGE_DELAY * 1000);
+let idInterval = setInterval(automaticAdvance, CHANGE_IMAGE_DELAY * 1000);
 
 const leftArrowButton = document.getElementById('left-arrow');
 const rightArrowButton = document.getElementById('right-arrow');
